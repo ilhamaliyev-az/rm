@@ -6,20 +6,38 @@
   <title>RM İDMAN KLUBU</title>
   <meta name="description" content="RM İdman Klubu – Bakının ən yaxşı idman zalı. Boks, kikboksinq, fitnes məşqləri." />
   <meta name="theme-color" content="#0A0A0A" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="RM idman klubu, boks, kikboksinq, fitnes, trenajor, Bakı idman zalı" />
+  <meta property="og:title" content="RM İDMAN KLUBU" />
+  <meta property="og:description" content="RM İdman Klubu – Bakının ən yaxşı idman zalı. Boks, kikboksinq, fitnes məşqləri." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/logo.png" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <!-- Performance: preconnect & dns-prefetch -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://wa.me" />
   <link rel="preload" href="images/logo.png" as="image" fetchpriority="high" />
   <link rel="preload" href="css/style.css" as="style" />
   <link rel="preload" href="js/app.js" as="script" />
-  <!-- Fonts: only needed weights -->
+  <!-- Fonts: only needed weights, display=swap for fast rendering -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome: async load -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Critical inline CSS for above-the-fold content -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Open Sans',sans-serif;background:#0A0A0A;color:#fff;overflow-x:hidden}
+    #main-header{position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;background:rgba(10,10,10,0.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .page{display:none;min-height:100vh;padding-top:70px}
+    .page.active{display:block}
+    .hero{position:relative;min-height:calc(100vh - 70px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#111}
+    .hero-logo{width:170px;height:170px;border-radius:50%;margin:0 auto 20px;border:4px solid rgba(150,200,10,0.6)}
+  </style>
 </head>
 <body>
 
@@ -178,19 +196,19 @@
         <div class="hours-card">
           <div class="hours-icon"><i class="fas fa-calendar-week"></i></div>
           <h3>B.ertəsi – Cümə</h3>
-          <p class="hours-time">09:00 – 23:00</p>
+          <p class="hours-time">10:00 – 23:00</p>
           <span class="hours-badge open">Açıqdır</span>
         </div>
         <div class="hours-card">
           <div class="hours-icon"><i class="fas fa-calendar-day"></i></div>
           <h3>Şənbə</h3>
-          <p class="hours-time">09:00 – 23:00</p>
+          <p class="hours-time">10:00 – 23:00</p>
           <span class="hours-badge open">Açıqdır</span>
         </div>
         <div class="hours-card">
           <div class="hours-icon"><i class="fas fa-calendar-day"></i></div>
           <h3>Bazar</h3>
-          <p class="hours-time">10:00 – 18:00</p>
+          <p class="hours-time">12:00 – 18:00</p>
           <span class="hours-badge open">Açıqdır</span>
         </div>
       </div>
@@ -640,6 +658,6 @@
   <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
 
-<script src="js/app.js"></script>
+<script src="js/app.js" defer></script>
 </body>
 </html>

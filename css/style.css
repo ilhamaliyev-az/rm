@@ -2732,3 +2732,120 @@ button {
     font-size: 0.92rem;
   }
 }
+
+/* =========================================
+   ADDITIONAL PERFORMANCE OPTIMIZATIONS
+   ========================================= */
+
+/* Font display optimization */
+@font-face {
+  font-display: swap;
+}
+
+/* Hardware acceleration for all interactive cards */
+.training-card,
+.campaign-card,
+.hours-card,
+.contact-card,
+.champion-card,
+.member-card,
+.gallery-item,
+.athletes-gallery-item,
+.champions-gallery-item,
+.home-training-card,
+.starter-price-option {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: auto;
+}
+
+/* Only activate will-change on hover to save GPU memory */
+.training-card:hover,
+.campaign-card:hover,
+.hours-card:hover,
+.contact-card:hover,
+.champion-card:hover,
+.member-card:hover {
+  will-change: transform, box-shadow;
+}
+
+/* Reduce animation on battery saver */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo {
+    animation: none !important;
+  }
+  .hero-scroll {
+    animation: none !important;
+  }
+  .animate-fade-up,
+  .animate-fade-up-delay,
+  .animate-fade-up-delay2 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Optimize scrolling performance */
+html {
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent layout shift for images */
+img {
+  height: auto;
+}
+
+/* Content visibility for off-screen sections */
+#page-gallery,
+#page-champions,
+#page-athletes,
+#page-campaigns,
+#page-martial-arts,
+#page-fitness {
+  content-visibility: auto;
+}
+
+/* Optimize font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optimize nav rendering */
+.navbar {
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+/* Improve tap targets on mobile */
+@media (max-width: 640px) {
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-btn {
+    min-height: 44px;
+  }
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Optimize page loading skeleton */
+.page:not(.active) {
+  content-visibility: hidden;
+}
